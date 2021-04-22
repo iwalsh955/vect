@@ -23,20 +23,17 @@ public:
 
 int main()
 {
-	Vect<Test> v;
-	Test t1;
-	v.push_back(t1);
-	v.push_back(Test(2));
+	Vect<int> v(10000000);
 
-	Vect<int> v2;
-	v2.push_back(1);
-	v2.push_back(5);
-	int x = 12;
-	v2.push_back(x);
-
-	for (int k = 0; k < v2.count(); k++)
+	for (int k = 0; k < 10000000; k++)
 	{
-		std::cout << v2[k] << std::endl;
+		v.push_back(k);
+		
+	}
+	std::cout << "Done" << std::endl;
+	for (int k = 0; k < 10000000; k++)
+	{
+		std::cout << v[k] << std::endl;
 	}
 
 	return 0;

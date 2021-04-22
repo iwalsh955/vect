@@ -57,8 +57,9 @@ void Vect<T>::extendArray()
 	for (int k = 0; k < capacity; k++)
 	{
 		data[k] = std::move((temp[k]));
+		
 	}
-
+	std::cout << "Done Moving" << std::endl;
 	delete[] temp;
 	capacity *= 2;
 }

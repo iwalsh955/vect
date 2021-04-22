@@ -4,6 +4,7 @@
 #define VECT_H
 
 #include <memory>
+#include <iostream>
 
 template <typename T>
 class Vect {
