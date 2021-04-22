@@ -20,7 +20,8 @@ public:
 	Vect(const int); //reserve size for array
 	Vect(); //default constructor
 	int count() const; //returns used length of array
-	void push_back(const T); //add new items
+	void push_back(const T&); //add new items
+	void push_back(T&&); //add new items from r-value
 	~Vect(); //destruct
 	T& operator [](const int) const; //brackets
 

@@ -25,7 +25,7 @@ int Vect<T>::count() const
 }
 
 template <typename T>
-void Vect<T>::push_back(const T p_data)
+void Vect<T>::push_back(const T& p_data)
 {
 	if (length == capacity)
 	{
@@ -37,6 +37,18 @@ void Vect<T>::push_back(const T p_data)
 }
 
 template <typename T>
+void Vect<T>::push_back(T&& p_data)
+{
+	if (length == capacity)
+	{
+		extendArray();
+	}
+
+	data[length] = std::move(p_data);
+	++length;
+}
+
+template <typename T>
 void Vect<T>::extendArray()
 {
 	T* temp = data;
@@ -44,7 +56,7 @@ void Vect<T>::extendArray()
 
 	for (int k = 0; k < capacity; k++)
 	{
-		data[k] = temp[k];
+		data[k] = std::move((temp[k]));
 	}
 
 	delete[] temp;
